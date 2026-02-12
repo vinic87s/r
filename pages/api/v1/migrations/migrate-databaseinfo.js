@@ -8,13 +8,17 @@ require("dotenv-expand").expand(require("dotenv").config({ path: ".env.developme
  * Migra dados de bairros do GeoJSON para a tabela bairros_sp com PostGIS.
  */
 async function migrate() {
+  const sslConfig = process.env.POSTGRES_CA
+    ? { ca: process.env.POSTGRES_CA }
+    : process.env.SSL_MODE === "require" || process.env.PGSSLMODE === "require" || process.env.NODE_ENV === "production";
+
   const client = new Client({
     host: process.env.POSTGRES_HOST,
     port: process.env.POSTGRES_PORT,
     user: process.env.POSTGRES_USER,
     database: process.env.POSTGRES_DB,
     password: process.env.POSTGRES_PASSWORD,
-    ssl: process.env.POSTGRES_CA ? { ca: process.env.POSTGRES_CA } : process.env.NODE_ENV === "production",
+    ssl: sslConfig,
   });
 
   try {
