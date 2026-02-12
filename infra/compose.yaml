@@ -1,7 +1,7 @@
 services:
   database:
     container_name: "postgres-dev"
-    image: "postgres:16.0-alpine3.18"
+    image: "postgis/postgis:16-3.4-alpine"
     env_file:
       - ../.env.development
     ports:
