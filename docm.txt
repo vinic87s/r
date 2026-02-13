@@ -1,0 +1,8 @@
+apirequester.js = requisições da api do open-meteo.com
+
+geocoder.js = script para pedir coordenadas da open weather api, para que sejam usadas nas curls da meteo
+
+migrate-database.js = script que roda as migrations iniciais de info do geocoder, para a table de referencias 
+geograficas, zona e id dos bairros.
+
+x.geojson = json com as informações necessarias da a meteo de todos os bairros de são paulo para que o banco de dados puxe coordenadas.

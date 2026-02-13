@@ -1,0 +1,20 @@
+/* Estilo base para cada distrito (cada tag <path>) - scoped to mapa-sp SVG */
+.mapa-sp path {
+  fill: #d1d5db;
+  stroke: #ffffff;
+  stroke-width: 0.5;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Efeito ao passar o mouse */
+.mapa-sp path:hover {
+  fill: #3b82f6;
+  stroke: #1d4ed8;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+}
+
+/* Estilo para quando um bairro for clicado/selecionado */
+.mapa-sp path.selecionado {
+  fill: #ef4444 !important;
+}
