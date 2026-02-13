@@ -9,7 +9,7 @@
 
 /* Efeito ao passar o mouse */
 .mapa-sp path:hover {
-  fill: #3b82f6;
+  fill: #3b82f6 !important;
   stroke: #1d4ed8;
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
 }
